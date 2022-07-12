@@ -1,6 +1,6 @@
 function bua_keo_bao(p){
     let arr=["bua","keo","bao"];
-    let k=Math.floor(Math.random(2));
+    let k=Math.floor(Math.random()*3);
     if(p==arr[k]) return "tie";
     if(p==bao){
         if(arr[k]=="keo") return "human lose";
