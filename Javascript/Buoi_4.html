@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Bài tập thực hành DOM</h1>
+<p class="para para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="para para-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p class="para para-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<div class="content">
+    <h2 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatibus sint molestias sit odit quia labore alias! Accusamus magnam aperiam officiis? Laboriosam numquam at eum dicta quos temporibus in aliquid?</p>
+</div>
+</body>
+<script>
+    const h1=document.getElementById('heading');
+    h1.style.color='red';
+   // h1.style.textTransform='uppercase';
+    h1.textContent=h1.textContent.toUpperCase();
+    const para=document.querySelectorAll(".para");
+    para.forEach(pa=>{
+        pa.style.color='blue';
+        pa.style.fontSize='20px';
+    });
+    const a=document.createElement("a");
+    a.href="https://learn.techmaster.vn/learn/LSy-i4y2/lQXFhjX5/8m6h8dvh";
+    a.target='blank';
+    a.textContent='facebook';
+    const para3=document.querySelector(".para-3");
+    console.log(para3);
+    para3.appendChild(a);
+    const title=document.querySelector("#title");
+    const parap=document.getElementsByClassName("description");
+    parap[0].classList.add('text-bold');
+
+    //Cau 6
+    const button=document.createElement("button");
+    button.textContent='Click me';
+    //const para33=document.getElementsByClassName("para-3");
+    para3.parentNode.replaceChild(button,para3);
+
+    const para2=document.querySelector(".para-2");
+    const paraCopy = para2.cloneNode(true);
+    para2.append(paraCopy);
+
+    const para1=document.querySelector(".para-1");
+    para1.parentNode.removeChild(para1);
+</script>
+</html>
