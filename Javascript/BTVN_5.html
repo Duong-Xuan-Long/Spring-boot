@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: block;
+            background-color: #f3f3f3;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+        }
+
+        .box:hover {
+            transform: scale(.9);
+            transition-duration: .5s;
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .box:active {
+            transform: scale(1.5);
+            transition-duration: .5s;
+        }
+        .show{
+            display:none;
+        }
+    </style>
+</head>
+    <body>
+        <div class="wrap">
+            <h1> JS DOM</h1>
+            <button id="btn">More boxes</button>
+            <h4 id="score"> Total box:<span class="points"></span></h4>
+
+            <div class="boxes">
+                <!-- <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div> -->
+            </div>
+        </div>
+    </body>
+
+<script>
+    let colors = ['#3498db','#9b59b6','#e74c3c','#2c3e50','#d35400'];
+    //cau 1 tren phan html
+    let box1=document.createElement('div');
+    box1.classList.add('box');
+    let boxes=document.querySelector(".boxes");
+    boxes.insertAdjacentElement('afterbegin',box1);
+    let box2=document.createElement('div');
+    box2.classList.add('box');
+    let box3=document.createElement('div');
+    box3.classList.add('box');
+    let box4=document.createElement('div');
+    box4.classList.add('box');
+    let box5=document.createElement('div');
+    box5.classList.add('box');
+    boxes.insertAdjacentElement('afterbegin',box2);
+    boxes.insertAdjacentElement('afterbegin',box3);
+    boxes.insertAdjacentElement('afterbegin',box4);
+    boxes.insertAdjacentElement('afterbegin',box5);
+    //cau 2
+    let box=document.querySelectorAll(".box");
+    for(let i=0;i<box.length;i++){
+        Array.from(box)[i].style.backgroundColor=colors[Math.floor(Math.random()*6)];
+    }
+    //cau 3
+    let points=document.querySelector(".points");
+    points.textContent=` ${colors.length}`;
+    //cau 4
+    Array.from(box).forEach(box=>{
+        box.addEventListener('click',()=>{
+            box.classList.toggle('show');
+            points.textContent=` ${--colors.length}`;
+        })
+    });
+    //cau 5
+    let button=document.querySelector("#btn");
+    button.addEventListener('click',function(){
+        
+        let box1=document.createElement('div');
+    box1.classList.add('box');
+        let box2=document.createElement('div');
+    box2.classList.add('box');
+    let box3=document.createElement('div');
+    box3.classList.add('box');
+    let box4=document.createElement('div');
+    box4.classList.add('box');
+    let box5=document.createElement('div');
+    box5.classList.add('box');
+    boxes.insertAdjacentElement('afterbegin',box1);
+    boxes.insertAdjacentElement('afterbegin',box2);
+    boxes.insertAdjacentElement('afterbegin',box3);
+    boxes.insertAdjacentElement('afterbegin',box4);
+    boxes.insertAdjacentElement('afterbegin',box5);
+    let box=document.querySelectorAll(".box");
+    for(let i=0;i<Array.from(box).length;i++){
+        Array.from(box)[i].style.backgroundColor=colors[Math.floor(Math.random()*6)];
+    }
+    let points=document.querySelector(".points");
+    points.textContent=` ${Array.from(box).length}`;
+    let k=Array.from(box).length;
+        Array.from(box).forEach(box=>{
+        box.addEventListener('click',()=>{
+            box.classList.toggle('show');
+            points.textContent=` ${--k}`;
+        })
+    });
+    
+    })
+    
+    
+</script>
+</html>
