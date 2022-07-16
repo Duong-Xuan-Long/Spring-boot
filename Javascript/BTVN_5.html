@@ -73,20 +73,25 @@
     for(let i=0;i<box.length;i++){
         Array.from(box)[i].style.backgroundColor=colors[Math.floor(Math.random()*6)];
     }
+    k=Array.from(box).length;
     //cau 3
     let points=document.querySelector(".points");
     points.textContent=` ${colors.length}`;
     //cau 4
-    Array.from(box).forEach(box=>{
+    function hidden(box){
+        Array.from(box).forEach(box=>{
         box.addEventListener('click',()=>{
-            box.classList.toggle('show');
-            points.textContent=` ${--colors.length}`;
+            box.classList.add('show');
+            points.textContent=` ${--k}`;
         })
     });
+    return k;
+    }
+    hidden(box);
     //cau 5
-    let button=document.querySelector("#btn");
+    function add(){
+        let button=document.querySelector("#btn");
     button.addEventListener('click',function(){
-        
         let box1=document.createElement('div');
     box1.classList.add('box');
         let box2=document.createElement('div');
@@ -97,27 +102,28 @@
     box4.classList.add('box');
     let box5=document.createElement('div');
     box5.classList.add('box');
+    let box=document.querySelectorAll(".box");
+    points.textContent=` ${Array.from(box).length+5}`;
     boxes.insertAdjacentElement('afterbegin',box1);
     boxes.insertAdjacentElement('afterbegin',box2);
     boxes.insertAdjacentElement('afterbegin',box3);
     boxes.insertAdjacentElement('afterbegin',box4);
     boxes.insertAdjacentElement('afterbegin',box5);
-    let box=document.querySelectorAll(".box");
     for(let i=0;i<Array.from(box).length;i++){
         Array.from(box)[i].style.backgroundColor=colors[Math.floor(Math.random()*6)];
     }
-    let points=document.querySelector(".points");
-    points.textContent=` ${Array.from(box).length}`;
-    let k=Array.from(box).length;
-        Array.from(box).forEach(box=>{
+    box=document.querySelectorAll(".box");
+    Array.from(box).forEach(box=>{
         box.addEventListener('click',()=>{
-            box.classList.toggle('show');
+            box.classList.add('show');
             points.textContent=` ${--k}`;
         })
     });
-    
+    box=document.querySelectorAll(".box");
+    points.textContent=` ${Array.from(box).length+5}`;
     })
-    
-    
+    }
+    add();
+   // points.textContent=` ${Array.from(box).length+5}`;
 </script>
 </html>
