@@ -189,7 +189,7 @@ public  class PersonMethods extends PersonAbstractClass<Person> {
         List<String> result=new ArrayList<>();
         List<Person> list1=new ArrayList<>();
         for(Person p:list){
-            if(p.getCity().equals(job)){
+            if(p.getJob().equals(job)){
                 list1.add(p);
             }
         }
