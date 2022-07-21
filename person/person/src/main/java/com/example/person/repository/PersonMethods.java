@@ -91,12 +91,12 @@ public  class PersonMethods extends PersonAbstractClass<Person> {
         HashMap<String, List<Person>> map=new HashMap<>();
         for(Person p:list){
             ArrayList<Person> list1= (ArrayList<Person>) map.get(p.getJob());
+            if(list1==null) list1=new ArrayList<>();
             list1.add(p);
             map.put(p.getJob(),list1);
         }
         return map;
     }
-
     @Override
     public HashMap<String, Integer> groupJobByCount(List<Person> list) {
         HashMap<String,Integer> map=new HashMap<>();
@@ -127,20 +127,23 @@ public  class PersonMethods extends PersonAbstractClass<Person> {
     }
 
     @Override
-    public Map<String, Integer> findTop5Cities(List<Person> list) {
+    public Map findTop5Cities(List<Person> list) {
         HashMap<String,Integer> map=new HashMap<>();
         for(Person p:list){
             map.put(p.getCity(),map.getOrDefault(p.getCity(),0)+1);
         }
-        Map<Integer,String> map1=new TreeMap<>();
-        for(String str:map.keySet()){
-            map1.put(map.get(str),str);
-        }
+        List<Map.Entry<String,Integer>>entry=new ArrayList<>(map.entrySet());
+        entry.sort(new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue()-o1.getValue();
+            }
+        });
         int count=0;
         HashMap<String,Integer> result=new HashMap<>();
-        for(Integer i:map1.keySet()){
+        for(Map.Entry<String, Integer> i:entry){
             if(count==5) break;
-            result.put(map1.get(i),i);
+            result.put(i.getKey(),i.getValue());
             count++;
         }
         return result;

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,38 +42,50 @@ public class PersonController {
     }
 
     @GetMapping(value="/5")
-    public String groupPeopleByCity(Model model) {
-        model.addAttribute("persons",personMethods.groupPeopleByCity(personMethods.getAll()));
-        return "allpersons";
+    @ResponseBody
+    public HashMap groupPeopleByCity(Model model) {
+        //model.addAttribute("persons",personMethods.groupPeopleByCity(personMethods.getAll()));
+        //"allpersons"
+        return personMethods.groupPeopleByCity(personMethods.getAll());
     }
 
     @GetMapping(value="/6")
-    public String groupJobByCount(Model model) {
-        model.addAttribute("persons",personMethods.groupJobByCount(personMethods.getAll()));
-        return "allpersons";
+    @ResponseBody
+    public HashMap<String, Integer> groupJobByCount(Model model) {
+//        model.addAttribute("persons",personMethods.groupJobByCount(personMethods.getAll()));
+//        "allpersons"
+        return personMethods.groupJobByCount(personMethods.getAll()) ;
     }
 
     @GetMapping(value="/7")
-    public String findTop5Jobs(Model model) {
-        model.addAttribute("persons",personMethods.findTop5Jobs(personMethods.getAll()));
-        return "allpersons";
+    @ResponseBody
+    public Map findTop5Jobs(Model model) {
+//        model.addAttribute("persons",personMethods.findTop5Jobs(personMethods.getAll()));
+//        "allpersons"
+        return personMethods.findTop5Jobs(personMethods.getAll());
     }
 
     @GetMapping(value="/8")
-    public String findTop5Cities(Model model) {
-        model.addAttribute("persons",personMethods.findTop5Cities(personMethods.getAll()));
-        return "allpersons";
+    @ResponseBody
+    public Map findTop5Cities(Model model) {
+//        model.addAttribute("persons",personMethods.findTop5Cities(personMethods.getAll()));
+//        "allpersons"
+        return personMethods.findTop5Cities(personMethods.getAll());
     }
 
     @GetMapping(value="/9")
-    public String findTopJobInCity(Model model) {
-        model.addAttribute("persons",personMethods.findTopJobInCity(personMethods.getAll(),"Zbrosławice"));
-        return "allpersons";
+    @ResponseBody
+    public HashMap findTopJobInCity(Model model) {
+//        model.addAttribute("persons",personMethods.findTopJobInCity(personMethods.getAll(),"Zbrosławice"));
+////        "allpersons"
+        return personMethods.findTopJobInCity(personMethods.getAll(),"Zbrosławice");
     }
 
     @GetMapping(value="/10")
-    public String find5CitiesHaveMostSpecificJob(Model model) {
-        model.addAttribute("persons",personMethods.find5CitiesHaveMostSpecificJob("Nurse",personMethods.getAll()));
-        return "allpersons";
+    @ResponseBody
+    public List find5CitiesHaveMostSpecificJob(Model model) {
+//        model.addAttribute("persons",personMethods.find5CitiesHaveMostSpecificJob("Nurse",personMethods.getAll()));
+//        "allpersons"
+        return personMethods.find5CitiesHaveMostSpecificJob("Nurse",personMethods.getAll());
     }
 }
