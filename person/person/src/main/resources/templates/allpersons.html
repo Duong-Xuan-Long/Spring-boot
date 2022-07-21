@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Data</title>
+</head>
+<body>
+<ul>
+    <li th:each="person: ${persons}">
+        <strong th:text="${person.fullName}"></strong><br>
+        <p th:text="${person.job}"></p>
+        <p th:text="${person.city}"></p>
+    </li>
+</ul>
+</body>
+</html>

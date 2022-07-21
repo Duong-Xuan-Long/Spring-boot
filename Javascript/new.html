@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            display: block;
+            background-color: #f3f3f3;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            float: left;
+            margin: 5px;
+        }
+
+        .box:hover {
+            transform: scale(.9);
+            transition-duration: .5s;
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        .box:active {
+            transform: scale(1.5);
+            transition-duration: .5s;
+        }
+        .show{
+            display:none;
+        }
+    </style>
+</head>
+    <body>
+        <div class="wrap">
+            <h1> JS DOM</h1>
+            <button id="btn">More boxes</button>
+            <h4 id="score"> Total box:<span class="points"></span></h4>
+
+            <div class="boxes">
+                <!-- <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div> -->
+            </div>
+        </div>
+    </body>
+
+<script>
+    let colors = ['#3498db','#9b59b6','#e74c3c','#2c3e50','#d35400'];
+let boxes=document.querySelector(".boxes");
+let box1=document.createElement('div');
+box1.classList.add('box');
+let box2=box1.cloneNode(true);
+let box3=box1.cloneNode(true);
+let box4=box1.cloneNode(true);
+let box5=box1.cloneNode(true);
+boxes.appendChild(box1);
+boxes.appendChild(box2);
+boxes.appendChild(box3);
+boxes.appendChild(box4);
+boxes.appendChild(box5);
+let box=document.querySelectorAll(".box");
+let k= Array.from(box);
+    function color(k){
+        for(let i=0;i<k.length;i++){
+       k[i].style.backgroundColor=colors[Math.floor(Math.random()*6)];
+    }
+    }
+    color(k);
+    let points=document.querySelector(".points");
+    points.textContent=` ${k.length}`;
+    function remove(k){
+        for(let i=0;i<k.length;i++){
+       k[i].addEventListener('click',function(){
+       k[i].classList.add('show');
+            points.textContent=` ${--k.length}`;
+       })
+    }
+    }
+    remove(k);
+    
+</script>
+</html>
