@@ -42,7 +42,7 @@ function renderSublist(obj){
             li+=`<li><a href="#">${value}</a></li>`;
         });
         subList.innerHTML=li;
-        const linka=document.querySelectorAll("a");
+        const linka=document.querySelectorAll("#sub-breed-list li a");
 Array.from(linka).forEach(a=>{
     a.addEventListener("click",async()=>{
         try {
