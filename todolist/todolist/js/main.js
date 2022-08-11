@@ -100,11 +100,13 @@ btnAdd.addEventListener("click", async () => {
 //7.Update todo
 const updateTodo = (id) => {
     try {
+        let index;
         btnAdd.textContent = "CẬP NHẬT";
         let todoUpdate;
         for (let i = 0; i < todos.length; i++) {
             if (todos[i].id == id) {
                 todoUpdate = todos[i];
+                index=i;
                 break;
             }
         }
@@ -118,9 +120,10 @@ const updateTodo = (id) => {
                 });
                 console.log(todoInput.value);
                 todos = todos.filter((t) => t.id != res.data.id);
-                todos.push(res.data);
+                todos.splice(index,0,res.data);
                 renderTodo(todos);
                 btnAdd.textContent = "THÊM";
+                todoInput.value="";
                 console.log(todos);
             }
         });
@@ -131,10 +134,12 @@ const updateTodo = (id) => {
 //8.UpdateStatus
 const toggleStatus=async(id)=>{
    try {
+    let index;
     let todoUpdate;
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == id) {
             todoUpdate = todos[i];
+            index=i;
             break;
         }
     }
@@ -143,7 +148,7 @@ const toggleStatus=async(id)=>{
         status: !todoUpdate.status,
     });
     todos = todos.filter((t) => t.id != res.data.id);
-    todos.push(res.data);
+    todos.splice(index,0,res.data);
     renderTodo(todos);
    } catch (error) {
     console.log(error);
