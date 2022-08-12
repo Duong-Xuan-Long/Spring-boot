@@ -27,17 +27,29 @@ public class CourseRepository {
     }
     public List<Course> findTitleTopics(List<Course> list,Optional<String> topic, Optional<String> title){
         if(topic.isPresent()&&title.isPresent()){
-            return list.stream().filter(course->course.getTopics().contains(topic.get())&&course.getTitle().contains(title.get())).collect(Collectors.toList());
+            return list.stream().filter(course->course.getTopics().contains(topic.get())&&check(course.getTitle(),title.get())).collect(Collectors.toList());
         }
         else if(topic.isPresent()){
             return list.stream().filter(course->course.getTopics().contains(topic.get())).collect(Collectors.toList());
         }
         else if(title.isPresent()){
-            return list.stream().filter(course->course.getTitle().contains(title.get())).collect(Collectors.toList());
+            return list.stream().filter(course->check(course.getTitle(),title.get())).collect(Collectors.toList());
         }
         else {
-            return null;
+            return list;
         }
+    }
+    public boolean check(String title,String k){
+        String titleLowercase=title.toLowerCase();
+        String kLowercase=k.toLowerCase();
+        for(int i=0;i<titleLowercase.length();i++){
+            for(int j=i+1;j<=titleLowercase.length();j++){
+                if(titleLowercase.substring(i,j).contains(kLowercase)){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     public Pair showDetailedCourse(int id){
         Course course=FakeDB.courses.stream().filter(c->c.getId()==id).collect(Collectors.toList()).get(0);

@@ -17,16 +17,15 @@ public class CourseController {
     private CourseService courseService;
     // Ví dụ demo
     // Lấy danh sách tất cả khóa học
-    @GetMapping("/courses")
-    public List<Course> getAllCourse(@RequestParam Optional<String> type) {
-        if(type.isPresent()){
-            return courseService.getTypeCourses(type.get());
+    @GetMapping({"/courses/{type}","/courses"})
+    public List<Course> getAllCourse(@PathVariable Optional<String> type, @RequestParam Optional<String> topic, @RequestParam Optional<String> title) {
+        if(!type.isPresent()){
+            return courseService.findTitleTopics(courseService.getAll(),topic,title);
         }
-        return courseService.getAll();
-    }
-    @GetMapping("/courses/{type}")
-    public List<Course> findTitleTopics(@PathVariable String type, @RequestParam Optional<String> topic, @RequestParam Optional<String> title){
-        return courseService.findTitleTopics(courseService.getTypeCourses(type),topic,title);
+        else{
+            String typeString=type.get();
+            return courseService.findTitleTopics(courseService.getTypeCourses(type.get()),topic,title);
+        }
     }
     @GetMapping("/course-detail/{id}")
     public Pair showDetailCourse(@PathVariable int id ){
