@@ -63,8 +63,6 @@ provinceEl.addEventListener("change",()=>{
     let provinceCode=provinceEl.value;
     console.log(provinceCode);
     getDistrict(provinceCode);
-    let districtCode=districtEl.value;
-    getCommune(districtCode);
 })
 
 districtEl.addEventListener("change",()=>{
