@@ -52,7 +52,7 @@ const renderTodo = arr => {
     todoListEl.innerHTML = "";
 
     if (arr.length == 0) {
-        todoListEl.innerHTML = "Không có công việc nào trong danh sách";
+        todoListEl.innerHTML = "Không ";
         return;
     }
 

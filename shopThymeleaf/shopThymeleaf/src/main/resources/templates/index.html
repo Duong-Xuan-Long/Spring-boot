@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-layout(~{:: title}, ~{:: #css}, ~{:: #main-content})}">
+<head>
+    <title>Trang chủ</title>
+    <th:block id="css">
+        <link rel="stylesheet" href="/css/product.css">
+    </th:block>
+</head>
+<body>
+<th:block id="main-content">
+    <div class="container">
+        <div class="intro">
+            <div class="intro-thumbnail">
+                <img src="https://images01.nicepage.io/f3/ee/f3ee8ad5da4b8714134a8ccc7c45d9e0.jpeg" alt="intro">
+            </div>
+            <div class="intro-content">
+                <h1 class="intro-title">Fashion Trends</h1>
+                <p class="intro-description">There are some trends that are just too plain wacky to really affect your wardrobe, so for that reason we've left out a few ideas we know you'd rather sidestep.</p>
+                <a href="#" class="intro-btn">Buy now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-sell">
+        <div class="container">
+            <h2 class="title-main">Ưu đãi trong thời gian có hạn</h2>
+            <div class="card-list">
+                <div class="card-item" th:each="product:${hotProducts}">
+                    <div class="card-thumb">
+                        <img th:src="${product.thumbnail}">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" th:text="${product.name}"></h3>
+                        <div class="card-price has-discount">
+                            <p class="price-normal" th:text="${product.price}">450.000&nbsp;₫</p>
+                            <p class="price-discount" th:text="${product.priceDiscount}">400.000&nbsp;₫</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-hot">
+        <div class="container">
+            <h2 class="title-main">Thời gian hot nhất gần đây</h2>
+            <div class="card-list">
+                <div class="card-item" th:each="product:${discountProducts}">
+                    <div class="card-thumb">
+                        <img th:src="${product.thumbnail}">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-name" th:text="${product.name}"></h3>
+                        <div class="card-price" th:classappend="${product.priceDiscount!=0}? 'has-discount':''">
+                            <p class="price-normal" th:text="${product.price}">450.000&nbsp;₫</p>
+                            <p class="price-discount" th:text="${product.priceDiscount}"
+                               th:if="${product.priceDiscount!=0}"
+                            >400.000&nbsp;₫</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

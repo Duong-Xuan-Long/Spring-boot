@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:fragment="main-layout(title,css,content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title th:replace="${title}">Trang chu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <th:block th:replace="${css} ?: ~{}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{/fragments/header::#header}"></th:block>
+
+<th:block th:replace="${content} ?: ~{}"></th:block>
+
+<th:block th:replace="~{/fragments/footer::#footer}"></th:block>
+</body>
+</html>

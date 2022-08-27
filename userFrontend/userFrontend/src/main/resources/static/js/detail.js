@@ -17,6 +17,7 @@ const show = async () => {
         renderProvince(res1.data, res.data);
         nameInput.value = res.data.name;
         phoneInput.value = res.data.phone;
+        avatarPreview.src = `http://localhost:8080${res.data.avatar}`;
     } catch (error) {
         console.log(error)
     }

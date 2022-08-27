@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div th:replace="~{/fragments/menu :: menu}"></div>
+<div>
+    <h2>About page</h2>
+    <h3>Random Message</h3>
+    <th:block th:with="number=${T(com.example.thymeleaf23.fragment.utils.Utils).randomNumber()}">
+        <p th:text="${number}"></p>
+        <div th:replace="~{/fragments/menu:: random-message(${number})}"></div>
+    </th:block>
+    <h3>FragMent Example</h3>
+
+    <div th:replace="~{/fragments/menu:: message(~{/fragments/menu::#text})}"></div>
+</div>
+</body>
+</html>

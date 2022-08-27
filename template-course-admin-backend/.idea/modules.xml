@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/template-course-admin/template-course-admin.iml" filepath="$PROJECT_DIR$/template-course-admin/template-course-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/template-course-admin-backend.iml" filepath="$PROJECT_DIR$/.idea/template-course-admin-backend.iml" />
+    </modules>
+  </component>
+</project>

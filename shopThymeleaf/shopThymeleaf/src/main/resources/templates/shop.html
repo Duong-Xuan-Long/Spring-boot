@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{/layout/layout :: main-layout(~{:: title}, ~{:: #css}, ~{:: #main-content})}">
+<head>
+    <title>Shop</title>
+    <th:block id="css">
+        <link rel="stylesheet" href="/css/product.css">
+    </th:block>
+
+</head>
+<body>
+
+    <th:block id="main-content">
+        <div id="product">
+            <div class="container">
+                <div class="banner-wrapper">
+                    <img src="./images/bg-discount2.png" alt="banner-discount">
+                </div>
+                <h2 class="title-main">Ưu đãi trong thời gian có hạn</h2>
+                <div class="card-list">
+                    <div class="card-item" th:each="product:${products}">
+                        <div class="card-thumb">
+                            <img th:src="${product.thumbnail}">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-name" th:text="${product.name}"></h3>
+                            <div class="card-price" th:classappend="${product.priceDiscount!=0}? 'has-discount':''">
+                                <p class="price-normal" th:text="${product.price}">450.000&nbsp;₫</p>
+                                <p class="price-discount" th:text="${product.priceDiscount}"
+                                   th:if="${product.priceDiscount!=0}"
+                                >400.000&nbsp;₫</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul th:fragment="menu" id="menu" class="menu">
+    <li>
+        <a href="/">Home</a>
+    </li>
+    <li>
+        <a href="/about">About</a>
+    </li>
+</ul>
+<div th:fragment="message(text)">
+    <p th:replace="${text}"></p>
+</div>
+<div th:fragment="random-message(number)">
+    <th:block th:switch="${number}">
+        <span th:case="0">
+            <th:block th:replace="~{::#text}"></th:block>
+        </span>
+        <span th:case="1">
+            <th:block th:replace="~{::#text-1}"></th:block>
+        </span>
+        <span th:case="2">
+            <th:block th:replace="~{::#text-2}"></th:block>
+        </span>
+        <span th:case="*">
+            Khong hop le
+        </span>
+    </th:block>
+</div>
+<p id="text">11111111111111111111111111111111</p>
+<p id="text-1">22222222222222222222222222222222</p>
+<p id="text-2">33333333333333333333333333333333</p>
+</body>
+</html>

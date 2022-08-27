@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/thymeleaf23-8fragment/thymeleaf23-8fragment.iml" filepath="$PROJECT_DIR$/thymeleaf23-8fragment/thymeleaf23-8fragment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/thymeleaf23_8fragment.iml" filepath="$PROJECT_DIR$/.idea/thymeleaf23_8fragment.iml" />
+    </modules>
+  </component>
+</project>
