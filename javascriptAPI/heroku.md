@@ -12,7 +12,7 @@ git add .
 Bước 5 :Commit code
 $ git commit -m"update"
 Bước 6:Liên kết local repo với heroku git repo
-$ heroku git:remote -a todolist-ok
+$ heroku git:remote -a mid-term-22
 Bước 7:Đẩy code lên heroku git repo
-$ git push heroku main
+$ git push heroku master
 ```midterm-test-ok

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap css -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="./bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="./slick.css" />
+
+    <!-- Link tu viet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">LỘ TRÌNH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">DOANH NGHIỆP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">KHÓA HỌC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">SẢN PHẨM HỌC VIÊN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">KHAI GIẢNG</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fs-4 mb-5">Vì sao nên chọn Techmaster?</h2>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="service-item text-center">
+                        <div>
+                            <img src="https://techmaster.vn/resources/image/lecture.png" alt="">
+                        </div>
+                        <p class="mt-4">Lựa chọn học trực tiếp tại trung tâm hoặc học trực tuyến có tương tác phù hợp
+                            với nhu cầu học viên</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item text-center">
+                        <div>
+                            <img src="https://techmaster.vn/resources/image/binary-code.png" alt="">
+                        </div>
+                        <p class="mt-4">Hệ thống giáo trình chi tiết, tài liệu trực tuyến, mã nguồn phong phú cập nhật
+                            mới nhất</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item text-center">
+                        <div>
+                            <img src="https://techmaster.vn/resources/image/group.png" alt="">
+                        </div>
+                        <p class="mt-4">Đội ngũ giảng viên giỏi, chấm bài 1:1, kinh nghiệm làm việc tại IBM, Microsoft,
+                            FSoft,...</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item text-center">
+                        <div>
+                            <img src="https://techmaster.vn/resources/image/certificate.png" alt="">
+                        </div>
+                        <p class="mt-4">Cam kết giới thiệu việc làm, hoàn lại học phí nếu không xin được việc theo đúng
+                            chuyên môn đã học.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="course">
+        <div class="container">
+            <h2 class="text-center fs-4 mb-5">Các khóa học dài hạn cam kết việc làm</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm mb-4">
+                        <div class="thumbnail">
+                            <img src="https://techmaster.vn/resources/image/route_devops.png" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/zjwMKvp6" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://techmaster.vn/resources/image/route_java.png" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://techmaster.vn/resources/image/route_frontend.jpg" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://techmaster.vn/resources/image/route_devops.png" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/zjwMKvp6" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">DevOps</h3>
+                            <p class="fw-light">DevOps là một văn hóa làm việc kết hợp giữa kỹ sư phát triển phần mềm
+                                (dev) với bộ phận operator (kỹ sư hệ thống, nhân viên bảo mật, kỹ sư mạng, kỹ sư…</p>
+                            <p class="fw-bold text-black-50">5 tháng - 42 buổi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center fs-4 my-5">Trải nghiệm học viên</h2>
+            <div class="owl-carousel">
+                <div class="px-3">
+                    <div class="blog-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/brbgh4451coepbqoch60/xe8KZtI6" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">Khi nào mình trở thành DEV thực sự và có thu nhập tốt, mình sẽ viết
+                                feedback tổng kết cho cậu !</h3>
+                            <p class="fw-light">Cho dù lên kế hoạch khá bài bản như vậy thì sự nghiệp học hành của mình
+                                vẫn rất là gian nan. Mới đi học được 3 buổi,...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-3">
+                    <div class="blog-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/bub3enc51co7s932dsk0/-evUrkFn" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">Khi lớp Java Fullstack bắt đầu học sang học phần Spring Boot sẽ thấy thế
+                                nào?</h3>
+                            <p class="fw-light">Lớp học đã đi từ những buổi học căn bản đến nâng cao, bước sang học phần
+                                quan trọng nhất là Spring Boot...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-3">
+                    <div class="blog-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/fOUwlHpW" alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">Con đường đến với lập trình viên Frontend của chàng sinh viên Mật Mã</h3>
+                            <p class="fw-light">Chào tất cả mọi người mình xin tự giới thiệu mình là Kiều Phúc Huy, hiện
+                                tại mình đang sinh sống tại Hà Nội và đang là...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-3">
+                    <div class="blog-item bg-white shadow-sm">
+                        <div class="thumbnail">
+                            <img src="https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/c7ek5nc51co14cjunvn0"
+                                alt="">
+                        </div>
+                        <div class="content p-3">
+                            <h3 class="fs-5">Từ kỹ sư xây dựng trở thành Fresher Developer.</h3>
+                            <p class="fw-light">Chào tất cả mọi người, mình tên là Hòa sinh năm 1997, quê ở Nam Định,
+                                hiện tại mình đang sống và là việc trên Hà Nội và...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-md-3">
+                    <ul class="footer-info list-unstyled nav-list">
+                        <h4 class="fs-6 fw-normal">CHỦ SỞ HỮU WEBSITE</h4>
+                        <li> <a href="/" target="_blank">Công ty TNHH TechMaster Vietnam Ltd </a> </li>
+                        <li> <span>Số ĐKDN: 0105392153 </span> </li>
+                        <li> <span>Ngày cấp: 4-7-2011 </span> </li>
+                        <li> <span>Nơi cấp: Sở kế hoạch - đầu tư Hà nội </span> </li>
+                        <li> <span>Người đại diện pháp luật: Lê Minh Thu </span> </li>
+                        <li> <span>Phụ trách nội dung: Trịnh Minh Cường </span> </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer-info list-unstyled nav-list">
+                        <h4 class="fs-6 fw-normal">GIỚI THIỆU</h4">
+                            <li> <a href="/trungtam/trung-tam" target="_blank">Học viện CNTT TechMaster </a> </li>
+                            <li> <a href="/trungtam/giang-vien" target="_blank">Giảng viên </a> </li>
+                            <li> <a href="/trungtam/quy-dinh-chung" target="_blank">Quy định </a> </li>
+                            <li> <a href="/trungtam/huong-dan-mua-khoa-hoc" target="_blank">Hướng dẫn mua khóa học </a>
+                            </li>
+                            <li> <a href="/trungtam/uu-dai-va-hoan-tra-hoc-phi" target="_blank">Ưu đãi và hoàn trả học
+                                    phí
+                                </a> </li>
+                            <li> <a href="/trungtam/bao-ve-thong-tin-khach-hang" target="_blank">Bảo vệ thông tin khách
+                                    hàng
+                                </a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer-info list-unstyled nav-list">
+                        <h4 class="fs-6 fw-normal">TƯ VẤN TUYỂN SINH</h4>
+                        <li> <a href="tel:0963023185" target="_blank">Phạm Thị Mẫn - 0963023185 </a> </li>
+                        <li> <a href="mailto:manpham@techmaster.vn" target="_blank">manpham@techmaster.vn </a> </li>
+                        <li> <a href="tel:0987273764" target="_blank">Dương Đức Thịnh - 0987273764 </a> </li>
+                        <li> <a href="mailto:thinh@techmaster.vn" target="_blank">thinh@techmaster.vn </a> </li>
+                        <li> <a href="tel:0382416368" target="_blank">Nguyễn Thanh Hương - 0382416368 </a> </li>
+                        <li> <a href="mailto:huong@techmaster.vn" target="_blank">huong@techmaster.vn </a> </li>
+                        <li> <span>TƯ VẤN ĐÀO TẠO DOANH NGHIỆP </span> </li>
+                        <li> <a href="tel:0902209011" target="_blank">0902209011 </a>- <a
+                                href="mailto:cuong@techmaster.vn" target="_blank">cuong@techmaster.vn</a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="footer-info list-unstyled nav-list">
+                        <h4 class="fs-6 fw-normal">ĐỊA CHỈ</h4>
+                        <li> <a href="https://g.page/TechmasterVN?share" target="_blank">Cơ sở 1: 14 ngõ 4, Nguyễn Đình
+                                Chiểu, Quận Hai Bà Trưng, Hà Nội </a> </li>
+                        <li> <a href="https://goo.gl/maps/ptHTtt4eDfTyMcS1A" target="_blank">Cơ sở 2: Tầng 12A, tòa nhà
+                                Viwaseen Tower, số 48, Tố Hữu, Lê Văn Lương kéo dài, Hà Nội </a> </li>
+                        <li> <a href="https://goo.gl/maps/JMy1becGYRL7qy9F9" target="_blank">Cơ sở 3: Tầng 5, số 13 Dịch
+                                Vọng Hậu, Cầu Giấy, Hà Nội </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- bootstrap js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="./slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel();
+
+            $('.autoplay').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+</body>
+
+</html>
