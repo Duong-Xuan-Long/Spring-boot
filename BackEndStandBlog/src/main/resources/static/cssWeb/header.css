@@ -1,0 +1,12 @@
+#header a:hover,a:active{
+    color:#f48840;
+} 
+#header .navbar-light .navbar-nav .nav-link.active{
+    color:#f48840;
+}
+#header {
+    background-color: #f7f7f7;
+}
+#header a{
+    color:#1e1e1e;
+}

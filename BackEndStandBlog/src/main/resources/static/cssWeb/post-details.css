@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+#card{
+    margin: 0px 10px;
+    padding: 120px 0px;
+    text-align: left;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://graylinegroup.com/wp-content/uploads/2016/03/city-1209105_1280-1.jpg");
+}
+#card .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+#card .row h4{
+    color: #f48840;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+#card .row h2{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+#content .content1{
+    margin: 0px 190px;
+}
+#content .content1 .flex2{
+    width:180vw;
+}
+#content .col-6 .card h5{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    color: #f48840;
+}
+#content .col-6 .card .firstA{
+    text-decoration: none;
+}
+#content .col-6 .card a h4{
+    font-size: 24px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    color: #20232e;
+    margin: 10px 0px 12px 0px;
+}
+#content .col-6 .card .card-body .firstAGroup a{
+    text-decoration: none;
+    color:#aaaaaa;
+    border-right:1px solid #aaaaaa ;
+    padding-right:10px ;
+    font-size: 14px;
+}
+#content .col-6 .card .card-body .firstAGroup a:hover{
+    color:#f48840;
+}
+#content .col-6 .card .card-body .firstAGroup .card-linkLast{
+    border-right:0px;
+}
+#content .col-6 .card .card-body p{
+    padding: 25px 0px;
+    margin: 25px 0px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 30px;
+}
+#content .col-6 .card .card-body .footerCard a{
+    text-decoration: none;
+    color:#aaaaaa;
+    font-size: 14px;
+}
+#content .col-6 .card .card-body .footerCard a:hover{
+    color:#f48840;
+}
+#content .page1Content .aGroup a{
+    text-decoration: none;
+    color:#aaaaaa;
+    border-right:1px solid #aaaaaa ;
+    padding-right:10px ;
+}
+#content .page1Content .aGroup a:hover{
+    color:#f48840;
+}
+#content .page1Content .aGroup .lastA{
+    border-right:0px;
+}
+#content .page1{
+    /* height:756px; */
+    border: 1px solid #eeeeee;
+}
+#content .page1 img{
+    width:100%;
+}
+#content .page1 .page1Footer a{
+    text-decoration: none;
+    color:#aaa;
+}
+#content .page1 .page1Footer a:hover{
+    color:#f48840;
+}
+
+#content .comment h2{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #20232e;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    padding-top: 55px;
+}
+#content .comment ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#content .comment ul li{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+#content .comment ul li .thumbnail{
+    display: inline;
+    float: left;
+}
+#content .comment ul li img {
+    max-width: 100px;
+    display: inline;
+    vertical-align: middle;
+    border-style: none;
+}    
+#content .comment ul li .rightComment{
+    margin-left: 130px;
+}
+#content .comment ul li .rightComment h4{
+    color: #20232e;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+#content .comment ul li .rightComment h4 span{
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    margin-left: 20px;
+}
+#content .comment ul li .rightComment p{
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 30px;
+}
+#content .yourComment .sidebar-heading h2{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #20232e;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+#content .yourComment fieldset{
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+#content .yourComment fieldset input[type="text"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #7a7a7a;
+    outline: none;
+    padding: 0px 15px;
+    margin-top: 20px;
+}
+#content .yourComment fieldset textarea{
+    width: 100%;
+    height: 46px;
+    border: 1px solid #eee;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #7a7a7a;
+    outline: none;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    height: 180px;
+    max-height: 220px;
+    max-width: 100%;
+    min-width: 160px;
+}
+#content .yourComment fieldset button{
+    display: inline-block;
+    background-color: #f48840;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+}
+

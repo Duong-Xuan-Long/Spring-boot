@@ -1,13 +1,12 @@
 package com.example.ToDoListnew.controller;
 
-import com.example.ToDoListnew.model.Todo;
+import com.example.ToDoListnew.entity.Todo;
 import com.example.ToDoListnew.request.CreateTodoRequest;
 import com.example.ToDoListnew.request.UpdateTodoRequest;
 import com.example.ToDoListnew.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,11 +28,11 @@ public class TodoController {
         return todoService.createTodo(createTodoRequest);
     }
     @PutMapping("/todos/{id}")
-    public Todo updateTodos(@PathVariable int id, @RequestBody UpdateTodoRequest updateTodoRequest){
+    public Todo updateTodos(@PathVariable Integer id, @RequestBody UpdateTodoRequest updateTodoRequest){
         return todoService.updateTodo(id,updateTodoRequest);
     }
     @DeleteMapping("/todos/{id}")
-    public void deleteTodos(@PathVariable int id){
+    public void deleteTodos(@PathVariable Integer id){
         todoService.deleteTodo(id);
     }
 }

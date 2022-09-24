@@ -11,5 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UpdateTodoRequest {
     private String title;
-    private boolean status;
+    private Boolean status;
 }
