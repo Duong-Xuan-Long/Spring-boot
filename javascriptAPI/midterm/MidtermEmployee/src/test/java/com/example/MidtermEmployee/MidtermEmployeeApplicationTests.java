@@ -193,5 +193,9 @@ class MidtermEmployeeApplicationTests {
 //		int a=test.sum();
 //		System.out.println(a);
 //	}
+	@Test
+	void TestGetList(){
+		Map<String,List<Student>> map=courseRepository.TestGetList();
+	}
 
 }
