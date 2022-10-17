@@ -79,7 +79,7 @@ const renderImage = arr => {
     arr.forEach(e => {
         html += `
         <div class="image-item" onclick="chooseImage(this)">
-            <img src="http://localhost:8080${e}" alt="">
+            <img src="http://localhost:8081${e}" alt="">
         </div>`;
     });
     imageContainerEl.innerHTML = html;
@@ -105,7 +105,7 @@ btnChoseImage.addEventListener("click", async () => {
         let res = await axios.put(`${URL_API}/${idURL}/update-avatar`, {
             avatar: avatarString,
         })
-        avatarPreview.src = `http://localhost:8080${avatarString}`;
+        avatarPreview.src = `http://localhost:8081${avatarString}`;
     } catch (error) {
         console.log(error);
     }
