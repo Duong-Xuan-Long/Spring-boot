@@ -1,0 +1,41 @@
+version: "3.3"
+
+services:
+  # MySQL
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./db-user.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: 123
+
+  # PhpMyAdmin
+  phpmyadmin:
+    depends_on:
+      - mysql
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - "89:82"
+    environment:
+      PMA_HOST: root #mysql
+      MYSQL_ROOT_PASSWORD: 123
+
+  # Mail
+  maildev:
+    image : maildev/maildev
+    restart: always
+    ports:
+      - "1081:1080"
+  #      - "1025:1025"
+
+  # App
+  app:
+    image: springboot-demo:latest #buihien0109/jwt-application:latest
+    depends_on:
+      - mysql
+    ports:
+      - "8899:8020"
+    restart: always
