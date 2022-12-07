@@ -26,10 +26,6 @@ public class IndexAdminController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/login")
-    public String loginForm(){
-        return "login";
-    }
 
     //trang index admin
     @RequestMapping("/index")

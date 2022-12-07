@@ -6,12 +6,16 @@ import com.example.Web_Ecommerce.exception.BadRequestException;
 import com.example.Web_Ecommerce.request.LoginRequest;
 import com.example.Web_Ecommerce.request.RegisterRequest;
 import com.example.Web_Ecommerce.service.CustomerService;
-import com.example.Web_Ecommerce.serviceCustomer.AuthService;
-import com.example.Web_Ecommerce.serviceCustomer.CustomerForgotPasswordService;
+import com.example.Web_Ecommerce.serviceAuth.AuthService;
+import com.example.Web_Ecommerce.serviceAuth.CustomerForgotPasswordService;
+import com.example.Web_Ecommerce.utils.ValidateObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -20,6 +24,7 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/shop")
@@ -77,9 +82,12 @@ public class AuthController {
 
     //Xử lí quá trình đăng kí
     @PostMapping("/do-register")
-    @ResponseBody
-    public String doRegister(@RequestBody RegisterRequest registerRequest) throws MessagingException {
-        return authService.register(registerRequest);
+    public ResponseEntity<?> doRegister(@RequestBody RegisterRequest registerRequest) throws MessagingException {
+        Map<String,String> errors= ValidateObject.validateRegister(registerRequest);
+        if(!ObjectUtils.isEmpty(errors)){
+            return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
+        }
+        return ResponseEntity.ok(authService.register(registerRequest));
     }
 
     //Link đến trang xử lí quên mật khẩu
@@ -99,9 +107,12 @@ public class AuthController {
         try {
             forgotPasswordService.forgotPassword(email);
             redirectAttributes.addFlashAttribute("success", "Mở email của bạn lấy mật khẩu mới và đăng nhập lại");
+
         } catch (BadRequestException e) {
+            e.printStackTrace();
             redirectAttributes.addFlashAttribute("error", e.getMessage());
         } catch (MessagingException e) {
+            e.printStackTrace();
             redirectAttributes.addFlashAttribute("error", e.getMessage());
         }
 

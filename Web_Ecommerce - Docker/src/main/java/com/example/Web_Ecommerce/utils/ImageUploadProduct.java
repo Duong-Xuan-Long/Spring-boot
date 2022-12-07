@@ -11,14 +11,14 @@ import java.nio.file.StandardCopyOption;
 @Component
 public class ImageUploadProduct {
     //Đường dẫn của ảnh
-    private final String UPLOAD_FOLDER = "E:\\Web_Ecommerce\\src\\main\\resources\\static\\img\\image-product";
+    private final String UPLOAD_FOLDER = "E:\\Spring-boot\\Web_Ecommerce - Docker\\src\\main\\resources\\static\\img\\image-product";
 
     //Update ảnh
     public boolean uploadImage(MultipartFile imageProduct) {
         boolean isUpload = false;
         try {
             Files.copy(imageProduct.getInputStream(),
-                    Paths.get(UPLOAD_FOLDER + File.separator, imageProduct.getOriginalFilename()),
+                    Paths.get(UPLOAD_FOLDER + File.separator+ imageProduct.getOriginalFilename()),
                     StandardCopyOption.REPLACE_EXISTING);
             isUpload = true;
 
@@ -32,7 +32,7 @@ public class ImageUploadProduct {
     public boolean checkExisted(MultipartFile imageProduct) {
         boolean isExisted = false;
         try {
-            File file = new File(UPLOAD_FOLDER + "\\" + imageProduct.getOriginalFilename());
+            File file = new File(UPLOAD_FOLDER + File.separator + imageProduct.getOriginalFilename());
             isExisted = file.exists();
         } catch (Exception e) {
             e.printStackTrace();

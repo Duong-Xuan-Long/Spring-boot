@@ -23,7 +23,8 @@ public class AuthorizationFilterCustom extends OncePerRequestFilter {
     private CustomerServiceConfig customerServiceConfig;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
         // Lấy token từ trong cookie của request
         String token = jwtUtils.getTokenFromCookie(request);
         if (token == null) {

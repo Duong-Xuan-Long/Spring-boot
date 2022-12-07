@@ -3,16 +3,14 @@ package com.example.userFrontend.service;
 import com.example.userFrontend.exception.BadRequestException;
 import com.example.userFrontend.exception.NotFoundException;
 import com.example.userFrontend.request.UpDateAvatarRequest;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -48,7 +46,6 @@ public class FileService {
         try {
             // Sử dụng Buffer để lưu dữ liệu từ file
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-
             stream.write(file.getBytes());
             stream.close();
 
@@ -106,6 +103,8 @@ public class FileService {
             if(resource.exists() || resource.isReadable()) {
                 InputStream stream = resource.getInputStream();
                 byte[] bytes = StreamUtils.copyToByteArray(stream);
+//                InputStream stream = new FileInputStream(file.toFile());
+//                byte[] bytes = stream.readAllBytes();
                 stream.close();
                 return bytes;
             } else {

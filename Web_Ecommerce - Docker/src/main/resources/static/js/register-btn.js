@@ -13,7 +13,7 @@ document
         let password = passwordEl.value;
         let repeatPassword=repeatPasswordEl.value;
         if(password!=repeatPassword){
-            alert("Mật khẩu không giống nhau nhập lại");
+            toastr.warning("Mật khẩu không giống nhau nhập lại","Cảnh báo");
         }else{
             let res = await axios.post("/shop/do-register", {
                 firstName,
@@ -28,6 +28,9 @@ document
         }
 
     } catch (error) {
-        alert("Email đã tồn tại");
+        let data=error.response.data;
+        for(const key in data){
+            toastr.warning(`${data[key]}`,"Cảnh báo");
+        }
     }
 })

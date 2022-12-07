@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
 @Component
 public class ImageUploadCustomer {
     //Đường dẫn folder
-    private final String UPLOAD_FOLDER = "E:\\Web_Ecommerce\\src\\main\\resources\\static\\img\\imageCustomer";
+    private final String UPLOAD_FOLDER = "E:\\Spring-boot\\Web_Ecommerce - Docker\\src\\main\\resources\\static\\img\\imageCustomer";
 
     //update ảnh
     public boolean uploadImage(MultipartFile imageCustomer) {
